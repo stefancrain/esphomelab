@@ -1,0 +1,10 @@
+---
+- platform: wifi_info
+  ip_address:
+    name: "${node_name} Wifi Device IP Address"
+  mac_address:
+    name: "${node_name} Wifi Device Mac Address"
+  ssid:
+    name: "${node_name} Wifi Network name - SSID"
+  bssid:
+    name: "${node_name} Wifi Router - BSSID"

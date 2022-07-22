@@ -1,0 +1,7 @@
+---
+# https://esphome.io/components/time.html#sntp-time-source
+- platform: sntp
+  timezone: !secret timezone
+  on_time_sync:
+    then:
+      - logger.log: "Synchronized system clock from SNTP"

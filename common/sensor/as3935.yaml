@@ -1,0 +1,6 @@
+---
+- platform: as3935
+  lightning_energy:
+    name: "${node_name} Lightning Energy"
+  distance:
+    name: "${node_name} Distance Storm"

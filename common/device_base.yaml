@@ -1,0 +1,31 @@
+---
+esphome:
+  name: ${node_name}
+  name_add_mac_suffix: true
+  project:
+    name: "stefancrain.${node_name}"
+    version: ${release_id}
+  board: ${board}
+  platform: ${platform}
+
+# Enable logging
+logger:
+  level: ${log_level}
+  logs:
+    switch: INFO
+    light: WARN
+
+ota:
+  password: !secret ota_password
+
+api:
+  password: !secret api_password
+
+light:
+  - platform: status_led
+    name: "${node_name} Status LED"
+    pin: "${pin_led_status}"
+    restore_mode: ALWAYS_OFF
+
+web_server:
+  port: 80

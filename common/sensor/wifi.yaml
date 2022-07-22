@@ -1,0 +1,5 @@
+---
+# WiFi Signal sensor.
+- platform: wifi_signal
+  name: "${node_name} WiFi Signal"
+  update_interval: 60s

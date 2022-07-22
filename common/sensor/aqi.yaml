@@ -1,0 +1,93 @@
+---
+
+# https://aqs.epa.gov/aqsweb/documents/codetables/aqi_breakpoints.html
+- platform: template
+  name: "${node_name} US Air Quality Index"
+  id: us_aqi
+  value_template: >
+    {% set vv = states('sensor.pm2_5_avg_24h')|float %}
+    {% if vv > 0 and vv <= 12 %}
+      GOOD
+    {% elif vv > 12 and vv <= 35.5 %}
+      MODERATE
+    {% elif vv > 35.5 and vv <= 55.5 %}
+      UNHEALTHY FOR SENSITIVE
+    {% elif vv > 55.5 and vv <= 150.5 %}
+      UNHEALTHY
+    {% elif vv > 150.5 and vv <= 250.5 %}
+      VERY UNHEALTHY
+    {% elif vv > 250.5 %}
+      HAZARDOUS
+    {% else %}
+      UNKNOWN
+    {% endif %}
+
+- platform: template
+  name: "${node_name} China Air Quality Index"
+  id: china_aqi
+  value_template: >
+    {% set vv = states('sensor.pm2_5_avg_24h')|float %}
+    {% if vv > 0 and vv <= 35 %}
+      GOOD
+    {% elif vv > 35 and vv <= 75 %}
+      MODERATE
+    {% elif vv > 75 and vv <= 115 %}
+      UNHEALTHY FOR SENSITIVE
+    {% elif vv > 115 and vv <= 150 %}
+      UNHEALTHY
+    {% elif vv > 150 and vv <= 250 %}
+      VERY UNHEALTHY
+    {% elif vv > 250 %}
+      HAZARDOUS
+    {% else %}
+      UNKNOWN
+    {% endif %}
+
+# # The WHO guidelines work with 24-hour averages of the PM2.5 and PM10 sensors
+- platform: template
+  name: "${node_name} Particulate Matter <1µm 24h average"
+  id: pm1_avg_24h
+  icon: mdi:chemical-weapon
+  unit_of_measurement: µg/m³
+  lambda: |-
+    return id(pm1).state;
+  update_interval: 60s
+  filters:
+    - sliding_window_moving_average:
+        window_size: 1440  # = 24 hours x 60 minutes
+        send_every: 1
+  on_value:
+    then:
+      - script.execute: aqi
+
+# - platform: template
+#   name: "${node_name} Particulate Matter <2.5µm 24h average"
+#   id: pm2_5_avg_24h
+#   icon: mdi:chemical-weapon
+#   unit_of_measurement: µg/m³
+#   lambda: |-
+#     return id(pm2_5).state;
+#   update_interval: 60s
+#   filters:
+#     - sliding_window_moving_average:
+#         window_size: 1440  # = 24 hours x 60 minutes
+#         send_every: 1
+#   on_value:
+#     then:
+#       - script.execute: update_aqi
+
+# - platform: template
+#   name: "${node_name} Particulate Matter <10.0µm 24h average"
+#   id: pm10_avg_24h
+#   icon: mdi:chemical-weapon
+#   unit_of_measurement: µg/m³
+#   lambda: |-
+#     return id(pm10).state;
+#   update_interval: 60s
+#   filters:
+#     - sliding_window_moving_average:
+#         window_size: 1440  # = 24 hours x 60 minutes
+#         send_every: 1
+#   on_value:
+#     then:
+#       - script.execute: update_aqi

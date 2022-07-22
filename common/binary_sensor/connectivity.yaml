@@ -1,0 +1,3 @@
+---
+- platform: status
+  name: "${node_name} Connectivity"

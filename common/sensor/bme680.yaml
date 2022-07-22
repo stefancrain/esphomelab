@@ -1,0 +1,31 @@
+---
+- platform: bme680_bsec
+  # Temperature in °C
+  temperature:
+    name: "${node_name} BME680 Temperature"
+    sample_rate: lp
+  # Pressure in hPa
+  pressure:
+    name: "${node_name} BME680 Pressure"
+    sample_rate: lp
+  # Relative humidity %
+  humidity:
+    name: "${node_name} BME680 Humidity"
+    sample_rate: lp
+  # Gas resistance in Ω
+  gas_resistance:
+    name: "${node_name} BME680 Gas Resistance"
+  # Indoor air quality value
+  iaq:
+    name: "${node_name} BME680 IAQ"
+  # IAQ accuracy as a numeric value of 0, 1, 2, 3
+  iaq_accuracy:
+    name: "${node_name} BME680 Numeric IAQ Accuracy"
+
+  # CO2 equivalent estimate in ppm
+  co2_equivalent:
+    name: "${node_name} BME680 CO2 Equivalent"
+  # Volatile organic compounds equivalent estimate in ppm
+  breath_voc_equivalent:
+    name: "${node_name} BME680 Breath VOC Equivalent"
+ 
