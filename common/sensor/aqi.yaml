@@ -2,7 +2,7 @@
 
 # https://aqs.epa.gov/aqsweb/documents/codetables/aqi_breakpoints.html
 - platform: template
-  name: "${node_name} US Air Quality Index"
+  name: "${mac} US Air Quality Index"
   id: us_aqi
   value_template: >
     {% set vv = states('sensor.pm2_5_avg_24h')|float %}
@@ -23,8 +23,8 @@
     {% endif %}
 
 - platform: template
-  name: "${node_name} China Air Quality Index"
-  id: china_aqi
+  name: "${mac} CN Air Quality Index"
+  id: cn_aqi
   value_template: >
     {% set vv = states('sensor.pm2_5_avg_24h')|float %}
     {% if vv > 0 and vv <= 35 %}
@@ -45,9 +45,9 @@
 
 # # The WHO guidelines work with 24-hour averages of the PM2.5 and PM10 sensors
 - platform: template
-  name: "${node_name} Particulate Matter <1µm 24h average"
+  name: "${mac} Particulate Matter <1µm 24h average"
   id: pm1_avg_24h
-  icon: mdi:chemical-weapon
+  icon: mdi:air-purifier
   unit_of_measurement: µg/m³
   lambda: |-
     return id(pm1).state;
@@ -61,9 +61,9 @@
       - script.execute: aqi
 
 # - platform: template
-#   name: "${node_name} Particulate Matter <2.5µm 24h average"
+#   name: "${mac} Particulate Matter <2.5µm 24h average"
 #   id: pm2_5_avg_24h
-#   icon: mdi:chemical-weapon
+#   icon: mdi:air-purifier
 #   unit_of_measurement: µg/m³
 #   lambda: |-
 #     return id(pm2_5).state;
@@ -77,9 +77,9 @@
 #       - script.execute: update_aqi
 
 # - platform: template
-#   name: "${node_name} Particulate Matter <10.0µm 24h average"
+#   name: "${mac} Particulate Matter <10.0µm 24h average"
 #   id: pm10_avg_24h
-#   icon: mdi:chemical-weapon
+#   icon: mdi:air-purifier
 #   unit_of_measurement: µg/m³
 #   lambda: |-
 #     return id(pm10).state;

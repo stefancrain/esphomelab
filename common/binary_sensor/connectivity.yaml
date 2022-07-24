@@ -1,3 +1,4 @@
 ---
 - platform: status
-  name: "${node_name} Connectivity"
+  name: "${mac} Connectivity"
+  entity_category: diagnostic

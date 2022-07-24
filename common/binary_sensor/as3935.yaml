@@ -1,3 +1,3 @@
 ---
 - platform: as3935
-  name: "${node_name} Storm Alert"
+  name: "${mac} Storm Alert"

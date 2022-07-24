@@ -1,0 +1,32 @@
+---
+  - name: "${mac} Relay 1"
+    platform: gpio
+    pin: ${pin_relay_1}
+    id: relay1
+    restore_mode: RESTORE_DEFAULT_OFF
+    icon: "mdi:toggle-switch"
+    device_class: "outlet"
+
+  - name: "${mac} Relay 2"
+    platform: gpio
+    pin: ${pin_relay_2}
+    id: relay2
+    restore_mode: RESTORE_DEFAULT_OFF
+    icon: "mdi:toggle-switch"
+    device_class: "outlet"
+
+  - name: "${mac} Relay 3"
+    platform: gpio
+    pin: ${pin_relay_3}
+    id: relay3
+    restore_mode: RESTORE_DEFAULT_OFF
+    icon: "mdi:toggle-switch"
+    device_class: "outlet"
+
+  - name: "${mac} Relay 4"
+    platform: gpio
+    pin: ${pin_relay_4}
+    id: relay4
+    restore_mode: RESTORE_DEFAULT_OFF
+    icon: "mdi:toggle-switch"
+    device_class: "outlet"

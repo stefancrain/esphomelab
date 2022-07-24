@@ -1,8 +1,10 @@
 ---
 - platform: uptime
-  name: "${node_name} Uptime"
+  name: "${mac} Uptime Seconds"
   id: uptime_sensor
   update_interval: 60s
+  entity_category: diagnostic
+  state_class: total_increasing
   on_raw_value:
     then:
       - text_sensor.template.publish:

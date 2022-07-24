@@ -3,28 +3,34 @@
   type: PMSX003
 
   pm_1_0:
-    name: "${node_name} Particulate Matter <1.0µm Concentration"
+    name: "${mac} PM1"
     id: pm1
-    icon: mdi:chemical-weapon
+    icon: mdi:circle-small
+    device_class: "pm1"
     filters:
       - sliding_window_moving_average:
           window_size: 30
           send_every: 30
+    accuracy_decimals: 5
 
   pm_2_5:
-    name: "${node_name} Particulate Matter <2.5µm Concentration"
+    name: "${mac} PM2.5"
     id: pm2_5
-    icon: mdi:chemical-weapon
+    icon: mdi:circle-medium
+    device_class: "pm25"
     filters:
       - sliding_window_moving_average:
           window_size: 30
           send_every: 30
+    accuracy_decimals: 5
 
   pm_10_0:
-    name: "${node_name} Particulate Matter <10.0µm Concentration"
+    name: "${mac} PM10"
     id: pm10
-    icon: mdi:chemical-weapon
+    icon: mdi:circle
+    device_class: "pm10"
     filters:
       - sliding_window_moving_average:
           window_size: 30
           send_every: 30
+    accuracy_decimals: 5

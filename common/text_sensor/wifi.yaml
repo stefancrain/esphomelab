@@ -1,10 +1,20 @@
 ---
 - platform: wifi_info
   ip_address:
-    name: "${node_name} Wifi Device IP Address"
-  mac_address:
-    name: "${node_name} Wifi Device Mac Address"
+    name: "${mac} IP Address"
+    id: ip
+    entity_category: diagnostic
+    icon: "mdi:ip"
   ssid:
-    name: "${node_name} Wifi Network name - SSID"
+    name: "${mac} Network Name SSID"
+    entity_category: diagnostic
+    icon: "mdi:wifi-marker"
   bssid:
-    name: "${node_name} Wifi Router - BSSID"
+    name: "${mac} Router MAC BSSID"
+    entity_category: diagnostic
+    icon: "mdi:hexadecimal"
+  mac_address:
+    name: "${mac} Device MAC"
+    entity_category: diagnostic
+    icon: "mdi:hexadecimal"
+

@@ -1,7 +1,6 @@
 ---
 substitutions:
-  node_name: weatherstation
-  friendly_name: "Weather Station"
+  node_name: climate-outdoor
   pin_led_status: GPIO21
   pin_i2c: GPIO18
   pin_uart_rx: GPIO17
@@ -10,15 +9,7 @@ substitutions:
   platform: "ESP32"
 
 packages:
-  wifi: !include ../common/network.yaml
   device_base: !include ../common/device_base.yaml
-#   # time: !include .time.yaml
-#   # uptime_days: !include .uptime_in_days.yaml
-
-############
-
-logger:
-  level: verbose
 
 # PMSX003
 uart:
@@ -43,29 +34,16 @@ bme680_bsec:
 #   - pin: GPIO13
 
 binary_sensor:
-  - <<: !include ../common/binary_sensor/connectivity.yaml
   - <<: !include ../common/binary_sensor/as3935.yaml
 
 text_sensor:
-  - <<: !include ../common/text_sensor/wifi.yaml
   - <<: !include ../common/text_sensor/bme680.yaml
-  - <<: !include ../common/text_sensor/uptime.yaml
 
 sensor:
-  - <<: !include ../common/sensor/wifi.yaml
   - <<: !include ../common/sensor/bme680.yaml
-  - <<: !include ../common/sensor/uptime.yaml
   - <<: !include ../common/sensor/PMS5003.yaml
   - <<: !include ../common/sensor/as3935.yaml
   # - <<: !include ../common/sensor/aqi.yaml
 
-time:
-  - <<: !include ../common/time/sync-homeassistant.yaml
-  - <<: !include ../common/time/sync-sntp.yaml
-
 # script:
 #   - <<: !include ../common/script/aqi.yml
-
-sun:
-  latitude: !secret latitude
-  longitude: !secret longitude

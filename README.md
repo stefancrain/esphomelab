@@ -1,10 +1,16 @@
 # Stefan's ESPHomeLab
 
-Currently a WIP, Reuseable config across my ESPHome devices
+Currently a WIP, Reusable config across my ESPHome devices
 
 ## Deploying
 
 ```shell
 cd [projectdir]
-esphome --substitution release_id "$(md5sum main.yaml | awk '{print $1}' | cut -b-8 )" run main.yaml --device /dev/xxxx
+
+esphome \
+  --substitution mac "$(esptool.py chip_id | grep -m1 "MAC:" | cut -d: -f6- | tr -d ':')" \
+  --substitution release_id "$(git rev-parse --short=12 HEAD)" \
+  run main.yaml \
+  --device /dev/cu.xxx
+
 ```

@@ -1,5 +1,8 @@
 ---
 # WiFi Signal sensor.
 - platform: wifi_signal
-  name: "${node_name} WiFi Signal"
+  name: "${mac} WiFi Signal"
   update_interval: 60s
+  entity_category: diagnostic
+  icon: "mdi:signal"
+

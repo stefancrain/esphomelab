@@ -1,0 +1,54 @@
+---
+substitutions:
+  node_name: climate-indoor
+  pin_led_status: GPIO21
+  pin_i2c: GPIO18
+  pin_uart_rx: GPIO17
+  pin_uart_tx: GPIO16
+  board: "nodemcu-32s"
+  platform: "ESP32"
+
+packages:
+  device_base: !include ../common/device_base.yaml
+
+# PMSX003
+uart:
+  rx_pin: ${pin_uart_rx}
+  tx_pin: ${pin_uart_tx}
+  baud_rate: 9600
+
+# as3935_i2c:
+#   irq_pin: ${pin_i2c}
+
+i2c:
+
+# see https://esphome.io/components/sensor/bme680_bsec.html
+bme680_bsec:
+  address: 0x76
+  temperature_offset: ${bme680_temperature_offset}
+  iaq_mode: static
+  sample_rate: ${bosch_sample_rate}
+  state_save_interval: 2h
+
+# dallas:
+#   - pin: GPIO13
+
+deep_sleep:
+  run_duration: 60s
+  sleep_duration: 5min
+
+
+# binary_sensor:
+#   - <<: !include ../common/binary_sensor/as3935.yaml
+
+text_sensor:
+  - <<: !include ../common/text_sensor/bme680.yaml
+
+sensor:
+  - <<: !include ../common/sensor/bme680.yaml
+  - <<: !include ../common/sensor/PMS5003.yaml
+  # - <<: !include ../common/sensor/as3935.yaml
+  # - <<: !include ../common/sensor/aqi.yaml
+
+# script:
+#   - <<: !include ../common/script/aqi.yml
