@@ -2,7 +2,7 @@
 - platform: uptime
   name: "${mac} Uptime Seconds"
   id: uptime_sensor
-  update_interval: 60s
+  update_interval: 15s
   entity_category: diagnostic
   state_class: total_increasing
   on_raw_value:

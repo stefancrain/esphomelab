@@ -1,0 +1,27 @@
+---
+- id: consider_deep_sleep
+  mode: queued
+  then:
+    - logger.log: "Considering Deep Sleep"
+    - delay: 5s
+    - if:
+        condition:
+          and:
+            - wifi.connected
+            - api.connected
+            - binary_sensor.is_off: prevent_deep_sleep
+            - lambda: |-
+                if (
+                  id(uptime_sent) &&
+                  id(wifi_signal_sent)
+                ) {
+                  ESP_LOGD("sensors", "All sensors data sent");
+                  return true;
+                }
+                return false;
+        then:
+          - logger.log: "Entering in Deep Sleep"
+          - deep_sleep.enter: deep_sleep_control
+        else:
+          - logger.log: "Skipping Deep Sleep"
+          - delay: 1s

@@ -5,4 +5,10 @@
   update_interval: 60s
   entity_category: diagnostic
   icon: "mdi:signal"
-
+  on_value:
+    then:
+      - lambda: |-
+          id(wifi_signal_sent) = true;
+      - script.execute: consider_deep_sleep
+  filters:
+    - heartbeat: 3s

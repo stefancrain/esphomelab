@@ -6,15 +6,15 @@
     entity_category: diagnostic
     icon: "mdi:ip"
   ssid:
-    name: "${mac} Network Name SSID"
+    name: "${mac} Wifi Name SSID"
     entity_category: diagnostic
     icon: "mdi:wifi-marker"
   bssid:
-    name: "${mac} Router MAC BSSID"
+    name: "${mac} Wifi MAC BSSID"
     entity_category: diagnostic
     icon: "mdi:hexadecimal"
   mac_address:
-    name: "${mac} Device MAC"
+    name: "${mac} MAC"
     entity_category: diagnostic
     icon: "mdi:hexadecimal"
 

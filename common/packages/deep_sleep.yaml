@@ -1,0 +1,4 @@
+deep_sleep:
+  run_duration: ${run_duration}
+  sleep_duration: ${sleep_duration}
+  id: deep_sleep_control
