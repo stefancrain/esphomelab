@@ -1,10 +1,10 @@
 ---
 # WiFi Signal sensor.
 - platform: wifi_signal
-  name: "${mac} WiFi Signal"
+  name: '${mac} WiFi Signal'
   update_interval: 60s
   entity_category: diagnostic
-  icon: "mdi:signal"
+  icon: 'mdi:signal'
   on_value:
     then:
       - lambda: |-

@@ -1,8 +1,7 @@
 ---
-
 # https://aqs.epa.gov/aqsweb/documents/codetables/aqi_breakpoints.html
 - platform: template
-  name: "${mac} US Air Quality Index"
+  name: '${mac} US Air Quality Index'
   id: us_aqi
   value_template: >
     {% set vv = states('sensor.pm2_5_avg_24h')|float %}
@@ -23,7 +22,7 @@
     {% endif %}
 
 - platform: template
-  name: "${mac} CN Air Quality Index"
+  name: '${mac} CN Air Quality Index'
   id: cn_aqi
   value_template: >
     {% set vv = states('sensor.pm2_5_avg_24h')|float %}
@@ -45,7 +44,7 @@
 
 # # The WHO guidelines work with 24-hour averages of the PM2.5 and PM10 sensors
 - platform: template
-  name: "${mac} Particulate Matter <1µm 24h average"
+  name: '${mac} Particulate Matter <1µm 24h average'
   id: pm1_avg_24h
   icon: mdi:air-purifier
   unit_of_measurement: µg/m³
@@ -54,12 +53,11 @@
   update_interval: 60s
   filters:
     - sliding_window_moving_average:
-        window_size: 1440  # = 24 hours x 60 minutes
+        window_size: 1440 # = 24 hours x 60 minutes
         send_every: 1
   on_value:
     then:
       - script.execute: aqi
-
 # - platform: template
 #   name: "${mac} Particulate Matter <2.5µm 24h average"
 #   id: pm2_5_avg_24h

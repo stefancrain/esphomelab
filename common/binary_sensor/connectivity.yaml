@@ -1,4 +1,4 @@
 ---
 - platform: status
-  name: "${mac} Connectivity"
+  name: '${mac} Connectivity'
   entity_category: diagnostic

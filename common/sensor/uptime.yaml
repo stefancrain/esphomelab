@@ -1,6 +1,6 @@
 ---
 - platform: uptime
-  name: "${mac} Uptime Seconds"
+  name: '${mac} Uptime Seconds'
   id: uptime_sensor
   update_interval: 15s
   entity_category: diagnostic

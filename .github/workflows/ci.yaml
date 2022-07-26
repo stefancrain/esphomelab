@@ -19,6 +19,6 @@ jobs:
       - name: yaml-lint
         uses: karancode/yamllint-github-action@master
         with:
-          yamllint_config_filepath: .github/lint/.yamllint.yml
+          yamllint_config_filepath: .github/lint/.yamllint.yaml
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}

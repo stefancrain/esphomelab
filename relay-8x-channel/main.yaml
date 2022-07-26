@@ -1,14 +1,14 @@
 ---
 substitutions:
   node_name: relay-8-channel
-  pin_relay_1: GPIO33 # 
-  pin_relay_2: GPIO32 # 
-  pin_relay_3: GPIO13 # 
-  pin_relay_4: GPIO12 # 
-  pin_relay_5: GPIO21 # 
-  pin_relay_6: GPIO19 # 
-  pin_relay_7: GPIO18 # 
-  pin_relay_8: GPIO05 # 
+  pin_relay_1: GPIO33 #
+  pin_relay_2: GPIO32 #
+  pin_relay_3: GPIO13 #
+  pin_relay_4: GPIO12 #
+  pin_relay_5: GPIO21 #
+  pin_relay_6: GPIO19 #
+  pin_relay_7: GPIO18 #
+  pin_relay_8: GPIO05 #
 
 packages:
   device_base: !include ../common/device_base.yaml

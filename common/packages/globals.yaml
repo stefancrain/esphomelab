@@ -1,13 +1,14 @@
+---
 globals:
   - id: first_time_boot
     type: bool
-    initial_value: "true"
-    restore_value: yes
+    initial_value: true
+    restore_value: true
   - id: wifi_signal_sent
     type: bool
-    initial_value: "false"
-    restore_value: no
+    initial_value: false
+    restore_value: false
   - id: uptime_sent
     type: bool
-    initial_value: "false"
-    restore_value: no
+    initial_value: false
+    restore_value: false

@@ -2,62 +2,62 @@
 - platform: bme680_bsec
   # Temperature in °C
   temperature:
-    name: "${mac} Temperature"
+    name: '${mac} Temperature'
     sample_rate: ${bosch_sample_rate}
-    device_class: "temperature"
+    device_class: 'temperature'
     filters:
       - median
     accuracy_decimals: 2
 
   # Pressure in hPa
   pressure:
-    name: "${mac} Pressure"
+    name: '${mac} Pressure'
     sample_rate: ${bosch_sample_rate}
-    device_class: "pressure"
+    device_class: 'pressure'
     filters:
       - median
     accuracy_decimals: 2
 
   # Relative humidity %
   humidity:
-    name: "${mac} Humidity"
+    name: '${mac} Humidity'
     sample_rate: ${bosch_sample_rate}
-    device_class: "humidity"
+    device_class: 'humidity'
     filters:
       - median
     accuracy_decimals: 2
 
   # Gas resistance in Ω
   gas_resistance:
-    name: "${mac} Gas Resistance"
-    device_class: "gas"
+    name: '${mac} Gas Resistance'
+    device_class: 'gas'
     filters:
       - median
 
   # Indoor air quality value
   iaq:
-    name: "${mac} IAQ"
-    device_class: "aqi"
+    name: '${mac} IAQ'
+    device_class: 'aqi'
     filters:
       - median
 
   # IAQ accuracy as a numeric value of 0, 1, 2, 3
   iaq_accuracy:
-    name: "${mac} IAQ Accuracy num"
-    icon: "mdi:checkbox-marked-circle-outline"
+    name: '${mac} IAQ Accuracy num'
+    icon: 'mdi:checkbox-marked-circle-outline'
     filters:
       - median
 
   # CO2 equivalent estimate in ppm
   co2_equivalent:
-    name: "${mac} CO2 Equivalent"
-    device_class: "carbon_dioxide"
+    name: '${mac} CO2 Equivalent'
+    device_class: 'carbon_dioxide'
     filters:
       - median
 
   # Volatile organic compounds equivalent estimate in ppm
   breath_voc_equivalent:
-    name: "${mac} Breath VOC Equivalent"
-    device_class: "volatile_organic_compounds"
+    name: '${mac} Breath VOC Equivalent'
+    device_class: 'volatile_organic_compounds'
     filters:
       - median

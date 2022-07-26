@@ -1,0 +1,5 @@
+---
+- platform: homeassistant
+  id: prevent_deep_sleep
+  name: $friendly_name Prevent Deep Sleep
+  entity_id: input_boolean.prevent_deep_sleep

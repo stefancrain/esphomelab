@@ -4,4 +4,4 @@
   timezone: !secret timezone
   on_time_sync:
     then:
-      - logger.log: "Synchronized system clock from SNTP"
+      - logger.log: 'Synchronized system clock from SNTP'

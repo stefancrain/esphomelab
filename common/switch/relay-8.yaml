@@ -1,64 +1,64 @@
 ---
-  - name: "${mac} Relay 1"
-    platform: gpio
-    pin: ${pin_relay_1}
-    id: relay1
-    restore_mode: RESTORE_DEFAULT_OFF
-    icon: "mdi:toggle-switch"
-    device_class: "outlet"
+- name: '${mac} Relay 1'
+  platform: gpio
+  pin: ${pin_relay_1}
+  id: relay1
+  restore_mode: RESTORE_DEFAULT_OFF
+  icon: 'mdi:toggle-switch'
+  device_class: 'outlet'
 
-  - name: "${mac} Relay 2"
-    platform: gpio
-    pin: ${pin_relay_2}
-    id: relay2
-    restore_mode: RESTORE_DEFAULT_OFF
-    icon: "mdi:toggle-switch"
-    device_class: "outlet"
+- name: '${mac} Relay 2'
+  platform: gpio
+  pin: ${pin_relay_2}
+  id: relay2
+  restore_mode: RESTORE_DEFAULT_OFF
+  icon: 'mdi:toggle-switch'
+  device_class: 'outlet'
 
-  - name: "${mac} Relay 3"
-    platform: gpio
-    pin: ${pin_relay_3}
-    id: relay3
-    restore_mode: RESTORE_DEFAULT_OFF
-    icon: "mdi:toggle-switch"
-    device_class: "outlet"
+- name: '${mac} Relay 3'
+  platform: gpio
+  pin: ${pin_relay_3}
+  id: relay3
+  restore_mode: RESTORE_DEFAULT_OFF
+  icon: 'mdi:toggle-switch'
+  device_class: 'outlet'
 
-  - name: "${mac} Relay 4"
-    platform: gpio
-    pin: ${pin_relay_4}
-    id: relay4
-    restore_mode: RESTORE_DEFAULT_OFF
-    icon: "mdi:toggle-switch"
-    device_class: "outlet"
+- name: '${mac} Relay 4'
+  platform: gpio
+  pin: ${pin_relay_4}
+  id: relay4
+  restore_mode: RESTORE_DEFAULT_OFF
+  icon: 'mdi:toggle-switch'
+  device_class: 'outlet'
 
-  - name: "${mac} Relay 5"
-    platform: gpio
-    pin: ${pin_relay_5}
-    id: relay5
-    restore_mode: RESTORE_DEFAULT_OFF
-    icon: "mdi:toggle-switch"
-    device_class: "outlet"
+- name: '${mac} Relay 5'
+  platform: gpio
+  pin: ${pin_relay_5}
+  id: relay5
+  restore_mode: RESTORE_DEFAULT_OFF
+  icon: 'mdi:toggle-switch'
+  device_class: 'outlet'
 
-  - name: "${mac} Relay 6"
-    platform: gpio
-    pin: ${pin_relay_6}
-    id: relay6
-    restore_mode: RESTORE_DEFAULT_OFF
-    icon: "mdi:toggle-switch"
-    device_class: "outlet"
+- name: '${mac} Relay 6'
+  platform: gpio
+  pin: ${pin_relay_6}
+  id: relay6
+  restore_mode: RESTORE_DEFAULT_OFF
+  icon: 'mdi:toggle-switch'
+  device_class: 'outlet'
 
-  - name: "${mac} Relay 7"
-    platform: gpio
-    pin: ${pin_relay_7}
-    id: relay7
-    restore_mode: RESTORE_DEFAULT_OFF
-    icon: "mdi:toggle-switch"
-    device_class: "outlet"
+- name: '${mac} Relay 7'
+  platform: gpio
+  pin: ${pin_relay_7}
+  id: relay7
+  restore_mode: RESTORE_DEFAULT_OFF
+  icon: 'mdi:toggle-switch'
+  device_class: 'outlet'
 
-  - name: "${mac} Relay 8"
-    platform: gpio
-    pin: ${pin_relay_8}
-    id: relay8
-    restore_mode: RESTORE_DEFAULT_OFF
-    icon: "mdi:toggle-switch"
-    device_class: "outlet"
+- name: '${mac} Relay 8'
+  platform: gpio
+  pin: ${pin_relay_8}
+  id: relay8
+  restore_mode: RESTORE_DEFAULT_OFF
+  icon: 'mdi:toggle-switch'
+  device_class: 'outlet'

@@ -1,5 +1,5 @@
 ---
 - platform: bme680_bsec
   iaq_accuracy:
-    name: "${mac} IAQ Accuracy"
+    name: '${mac} IAQ Accuracy'
     id: bme680_iaq_accuracy

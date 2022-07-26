@@ -1,21 +1,21 @@
 ---
 substitutions:
   node_name: base
-  mac: "C0FFEE"
+  mac: 'C0FFEE'
   release_id: 99999999
 
   pin_led_status: GPIO25
   pin_i2c: GPIO18
   pin_uart_rx: GPIO17
   pin_uart_tx: GPIO16
-  board: "esp32dev"
-  platform: "ESP32"
+  board: 'esp32dev'
+  platform: 'ESP32'
   flash_write_interval: 5min
   log_level: INFO
-  
+
   # BMXX80
   bosch_sample_rate: lp # ulp
-  bme680_temperature_offset: "0"
+  bme680_temperature_offset: '0'
 
   # deep sleep
   run_duration: 60s
@@ -25,24 +25,23 @@ esphome:
   name: ${node_name}
   name_add_mac_suffix: true
   project:
-    name: "stefancrain.${node_name}"
+    name: 'stefancrain.${node_name}'
     version: ${release_id}
   board: ${board}
   platform: ${platform}
   on_boot:
     then:
       - deep_sleep.prevent: deep_sleep_control
-  # on_shutdown:
-  #   then:
-  #     - lambda: |-
-  #       id(ts_saved) = id(homeassistant_time).now().timestamp;
-
+  on_shutdown:
+    then:
+      - lambda: |-
+          id(ts_saved) = id(homeassistant_time).now().timestamp;
 
 preferences:
-  flash_write_interval: "${flash_write_interval}"
+  flash_write_interval: '${flash_write_interval}'
 
 logger:
-  level: "${log_level}"
+  level: '${log_level}'
   logs:
     switch: INFO
     light: WARN
@@ -55,8 +54,8 @@ api:
 
 light:
   - platform: status_led
-    name: "${mac} Status LED"
-    pin: "${pin_led_status}"
+    name: '${mac} Status LED'
+    pin: '${pin_led_status}'
     restore_mode: ALWAYS_OFF
 
 web_server:

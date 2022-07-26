@@ -4,4 +4,4 @@
   id: homeassistant_time
   on_time_sync:
     then:
-      - logger.log: "Synchronized system clock from Home Assistant"
+      - logger.log: 'Synchronized system clock from Home Assistant'

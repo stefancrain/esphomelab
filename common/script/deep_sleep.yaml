@@ -2,7 +2,7 @@
 - id: consider_deep_sleep
   mode: queued
   then:
-    - logger.log: "Considering Deep Sleep"
+    - logger.log: 'Considering Deep Sleep'
     - delay: 5s
     - if:
         condition:
@@ -20,8 +20,8 @@
                 }
                 return false;
         then:
-          - logger.log: "Entering in Deep Sleep"
+          - logger.log: 'Entering in Deep Sleep'
           - deep_sleep.enter: deep_sleep_control
         else:
-          - logger.log: "Skipping Deep Sleep"
+          - logger.log: 'Skipping Deep Sleep'
           - delay: 1s

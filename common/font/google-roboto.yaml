@@ -1,10 +1,10 @@
 ---
-- file: "gfonts://Roboto"
+- file: 'gfonts://Roboto'
   id: roboto_regular_20
   size: 20
-- file: "gfonts://Roboto"
+- file: 'gfonts://Roboto'
   id: roboto_regular_16
   size: 16
-- file: "gfonts://Roboto"
+- file: 'gfonts://Roboto'
   id: roboto_regular_12
   size: 12

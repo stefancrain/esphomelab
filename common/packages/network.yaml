@@ -8,7 +8,7 @@ wifi:
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "${node_name} - ${mac} AP"
+    ssid: '${node_name} - ${mac} AP'
     password: !secret fallback_hotspot_password
 
 captive_portal:

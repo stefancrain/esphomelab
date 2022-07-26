@@ -5,8 +5,8 @@ substitutions:
   pin_i2c: GPIO18
   pin_uart_rx: GPIO17
   pin_uart_tx: GPIO16
-  board: "nodemcu-32s"
-  platform: "ESP32"
+  board: 'nodemcu-32s'
+  platform: 'ESP32'
   log_level: VERY_VERBOSE
 
 packages:
@@ -45,6 +45,5 @@ sensor:
   - <<: !include ../common/sensor/PMS5003.yaml
   # - <<: !include ../common/sensor/as3935.yaml
   # - <<: !include ../common/sensor/aqi.yaml
-
 # script:
-#   - <<: !include ../common/script/aqi.yml
+#   - <<: !include ../common/script/aqi.yaml

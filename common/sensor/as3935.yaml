@@ -1,8 +1,8 @@
 ---
 - platform: as3935
   lightning_energy:
-    name: "${mac} Lightning Energy"
+    name: '${mac} Lightning Energy'
     icon: mdi:lightning-bolt
   distance:
-    name: "${mac} Distance Storm"
+    name: '${mac} Distance Storm'
     icon: mdi:map-marker-distance

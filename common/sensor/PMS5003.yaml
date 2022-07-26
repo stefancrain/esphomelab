@@ -3,10 +3,10 @@
   type: PMSX003
 
   pm_1_0:
-    name: "${mac} PM1"
+    name: '${mac} PM1'
     id: pm1
     icon: mdi:circle-small
-    device_class: "pm1"
+    device_class: 'pm1'
     filters:
       - sliding_window_moving_average:
           window_size: 30
@@ -14,10 +14,10 @@
     accuracy_decimals: 5
 
   pm_2_5:
-    name: "${mac} PM2.5"
+    name: '${mac} PM2.5'
     id: pm2_5
     icon: mdi:circle-medium
-    device_class: "pm25"
+    device_class: 'pm25'
     filters:
       - sliding_window_moving_average:
           window_size: 30
@@ -25,10 +25,10 @@
     accuracy_decimals: 5
 
   pm_10_0:
-    name: "${mac} PM10"
+    name: '${mac} PM10'
     id: pm10
     icon: mdi:circle
-    device_class: "pm10"
+    device_class: 'pm10'
     filters:
       - sliding_window_moving_average:
           window_size: 30

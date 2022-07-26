@@ -1,7 +1,7 @@
 ---
 # Make uptime Human Readable
 - platform: template
-  name: "${mac} Uptime"
+  name: '${mac} Uptime'
   id: uptime_human
   icon: mdi:clock-start
   entity_category: diagnostic
