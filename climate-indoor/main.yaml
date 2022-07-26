@@ -7,6 +7,7 @@ substitutions:
   pin_uart_tx: GPIO16
   board: "nodemcu-32s"
   platform: "ESP32"
+  log_level: VERY_VERBOSE
 
 packages:
   device_base: !include ../common/device_base.yaml
@@ -32,8 +33,6 @@ bme680_bsec:
 
 # dallas:
 #   - pin: GPIO13
-
-
 
 # binary_sensor:
 #   - <<: !include ../common/binary_sensor/as3935.yaml

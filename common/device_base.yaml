@@ -17,7 +17,7 @@ substitutions:
   bosch_sample_rate: lp # ulp
   bme680_temperature_offset: "0"
 
-  # deep sleep 
+  # deep sleep
   run_duration: 60s
   sleep_duration: 5min
 
@@ -63,11 +63,13 @@ web_server:
   port: 80
 
 packages:
-  wifi: !include network.yaml
-  deep_sleep: !include deep_sleep.yaml
+  wifi: !include packages/network.yaml
+  deep_sleep: !include packages/deep_sleep.yaml
+  globals: !include packages/globals.yaml
 
 binary_sensor:
   - <<: !include binary_sensor/connectivity.yaml
+  - <<: !include binary_sensor/deep_sleep.yaml
 
 text_sensor:
   - <<: !include text_sensor/wifi.yaml
@@ -80,6 +82,9 @@ sensor:
 time:
   - <<: !include time/sync-homeassistant.yaml
   - <<: !include time/sync-sntp.yaml
+
+script:
+  - <<: !include script/deep_sleep.yaml
 
 sun:
   latitude: !secret latitude

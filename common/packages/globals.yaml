@@ -3,3 +3,11 @@ globals:
     type: bool
     initial_value: "true"
     restore_value: yes
+  - id: wifi_signal_sent
+    type: bool
+    initial_value: "false"
+    restore_value: no
+  - id: uptime_sent
+    type: bool
+    initial_value: "false"
+    restore_value: no
