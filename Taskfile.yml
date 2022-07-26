@@ -1,0 +1,34 @@
+---
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - task --list
+
+  clean:
+    desc: Cleans temp files and folders
+    ignore_error: true
+    cmds:
+      - rm -rf **/.esphome/
+
+  lint:
+    desc: lint files
+    cmds:
+      - yamllint -c '.github/lint/.yamllint.yaml' . || true
+      - markdownlint -c '.github/lint/.markdownlint.yaml' *.md **/*.md .github/**/*.md || true
+      - prettier --ignore-path '.github/lint/.prettierignore' --config '.github/lint/.prettierrc.yaml' --check . || true
+      # - pre-commit run --all-files
+
+  pretty:
+    desc: fix errors
+    cmds:
+      - prettier --ignore-path '.github/lint/.prettierignore' --config '.github/lint/.prettierrc.yaml' --list-different --ignore-unknown --parser=markdown --write '*.md' '**/*.md' || true
+      - prettier --ignore-path '.github/lint/.prettierignore' --config '.github/lint/.prettierrc.yaml' --list-different --ignore-unknown --parser=yaml --write '*.y*ml' '**/*.y*ml' || true
+
+  gh:
+    cmds:
+      - act --graph
+      - act --job lint
+      # - act --job test
+      - act --job cve
