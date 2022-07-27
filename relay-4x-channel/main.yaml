@@ -1,0 +1,13 @@
+---
+substitutions:
+  node_name: relay-4-channel
+  pin_relay_1: GPIO33 #
+  pin_relay_2: GPIO32 #
+  pin_relay_3: GPIO13 #
+  pin_relay_4: GPIO12 #
+
+packages:
+  device_base: !include ../common/device_base.yaml
+
+switch:
+  - <<: !include ../common/switch/relay-4.yaml.yaml
