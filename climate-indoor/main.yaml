@@ -42,7 +42,7 @@ text_sensor:
 
 sensor:
   - <<: !include ../common/sensor/bme680.yaml
-  - <<: !include ../common/sensor/PMS5003.yaml
+  - <<: !include ../common/sensor/pmsx003.yaml
   # - <<: !include ../common/sensor/as3935.yaml
   # - <<: !include ../common/sensor/aqi.yaml
 # script:
